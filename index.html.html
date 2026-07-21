@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prince Financial | Premium Loan Consultancy</title>
+<meta content="Expert financial consultancy for home, personal, and business loans with elite service." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "success-emerald": "#2D6A4F",
+                        "surface": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "deep-navy-dark": "#001845",
+                        "on-primary-fixed": "#00174a",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#745c00",
+                        "outline": "#757682",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#444650",
+                        "on-primary-fixed-variant": "#2a4386",
+                        "on-tertiary-fixed": "#390b00",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary-container": "#d37758",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-container-high": "#e7e8e9",
+                        "slate-gray": "#4A5568",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-variant": "#e1e3e4",
+                        "primary": "#00113a",
+                        "primary-container": "#002366",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-dim": "#d9dadb",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-container": "#758dd5",
+                        "gold-leaf-light": "#E5C76B",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-container": "#501300",
+                        "secondary-fixed": "#ffe088",
+                        "error-crimson": "#A4161A",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fed65b",
+                        "inverse-primary": "#b3c5ff",
+                        "surface-tint": "#435b9f",
+                        "tertiary": "#2d0700",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-surface": "#191c1d",
+                        "on-secondary-fixed": "#241a00",
+                        "secondary": "#735c00",
+                        "surface-container": "#edeeef",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c5c6d2",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#783018",
+                        "surface-container-low": "#f3f4f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-xl": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-xl": ["60px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .step-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 100%;
+            height: 2px;
+            background: #E5C76B;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden pb-16 md:pb-0">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-deep-navy-dark shadow-md">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Prince Financial Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbD4nAkRtwUW3la4GSBMaiAAI1qct5TYACDgSRrI_FIMguzfxOhV63xpjtWZonjbxTjTkN_-mRqHGzOOjT3SEVmdTd0pO8slJpP6c-FOpuxTVFVX0GKSTZfxWW8-ECl7uyZIxu8Mlqi4gjlH0EgrbZFbeDWeiMPUVsX3F9MB1zUhwO2CI4wFZlgiw8nxFIZvGC4dFL7kkPlOgN7mC9hQE_LbnhRdJulmzxxex3ap6pQV-sZmqrupnAvXxEDyAj9phUmeXh2iOEqHY"/>
+<span class="font-headline-md text-headline-md font-bold text-gold-leaf-light hidden md:block">Prince Financial</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-surface hover:text-gold-leaf-light transition-colors font-label-sm text-label-sm" href="#services">Services</a>
+<a class="text-surface hover:text-gold-leaf-light transition-colors font-label-sm text-label-sm" href="#calculator">Calculator</a>
+<a class="text-surface hover:text-gold-leaf-light transition-colors font-label-sm text-label-sm" href="#testimonials">Testimonials</a>
+</nav>
+<button class="bg-gold-leaf-light text-deep-navy-dark px-6 py-2.5 rounded font-label-sm text-label-sm font-bold hover:opacity-90 transition-all active:scale-95">
+                Apply Now
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-margin-mobile overflow-hidden bg-deep-navy-dark">
+<div class="absolute inset-0 opacity-20">
+<div class="w-full h-full bg-cover bg-center" data-alt="A luxurious high-end corporate office in a skyscraper with floor-to-ceiling windows overlooking a modern city skyline at sunset. The lighting is warm and professional, reflecting a high-trust financial environment with deep navy and gold accents. The atmosphere is sophisticated and quiet, emphasizing elite financial consulting services." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAijUfJ2YKkpshRzBu8VlidaPqwgVgnosqUl6ik0njG21ocrgnHJvUEM9lrzI2xxge89kwcIYAxVUq0ZmdIN5-twir7mZfLL5kqye2gOXzRpFxd0SJwHqFSnupalMgvJTgmHCBhmuAkKHNc1xyxdlNuJfwjlgnFWZJyFTkVQpa0dFFSTgUZiuxEHz2WSy4z9ywx4jTAyoAF9jrKA_rpkHg4Ms3hbpW_xAN4eaKILjijMSXQEkr4s5kDyKs-Y3pvUt4vS3tKU8MVyo')"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto flex flex-col items-center text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white mb-6 md:font-headline-lg md:text-headline-lg">
+                Get Your Loan <span class="text-gold-leaf-light">Approved Faster</span>
+</h1>
+<p class="text-surface/80 max-w-lg mb-10 font-body-md text-body-md">
+                Experience elite financial guidance. We simplify complex loan processes to secure your future with speed and transparency.
+            </p>
+<div class="w-full max-w-md rounded-xl overflow-hidden shadow-2xl mb-12 transform hover:scale-[1.02] transition-transform">
+<img alt="Consultant Handshake" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1YxisYbPnYoCEqVf-49s2FbuQWopcn3OrucaB5xElI_SgiDOQxHRDkCbY6QWFRUbNAad-I8ynBGXjM7O0WttcOY70PqEb3B7RA6SDtyxoXFNzEwn347VPNLXtpjBqchQXAY-l69VENdPTnQIk3MQFJqa9Vxvh-X_oDWaofH884M2rRp3s55q7EsPj29EYBBzFWCpeiTRZd1FGqNQAJxpbJlZtTryuJCN11hvaHECg1ZE18odvJzKHbAjzUlLUCvfu3A-2eL95p0k"/>
+</div>
+<button class="w-full max-w-xs bg-gold-leaf-light text-deep-navy-dark py-4 rounded font-bold text-lg shadow-lg active:scale-95 transition-all">
+                Apply Now
+            </button>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-20 px-margin-mobile bg-surface" id="about">
+<div class="max-w-container-max mx-auto reveal">
+<div class="flex flex-col gap-6 border-l-4 border-gold-leaf-light pl-6">
+<h2 class="font-headline-md text-headline-md text-primary">Trusted Financial Legacy</h2>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                    Prince Financial Consultancy stands at the pinnacle of loan advisory. With decades of collective expertise, we bridge the gap between your aspirations and financial reality through a network of premium banking partners and an uncompromising commitment to excellence.
+                </p>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-20 px-margin-mobile" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-12 reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Our Financial Solutions</h2>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">Tailored for your success</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Personal -->
+<div class="bg-white p-6 rounded shadow-sm border-t-4 border-gold-leaf-light reveal flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="person">person</span>
+<h3 class="font-label-sm text-label-sm text-primary mb-1">Personal Loan</h3>
+</div>
+<!-- Home -->
+<div class="bg-white p-6 rounded shadow-sm border-t-4 border-gold-leaf-light reveal flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="home">home</span>
+<h3 class="font-label-sm text-label-sm text-primary mb-1">Home Loan</h3>
+</div>
+<!-- Business -->
+<div class="bg-white p-6 rounded shadow-sm border-t-4 border-gold-leaf-light reveal flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="business_center">business_center</span>
+<h3 class="font-label-sm text-label-sm text-primary mb-1">Business Loan</h3>
+</div>
+<!-- Property -->
+<div class="bg-white p-6 rounded shadow-sm border-t-4 border-gold-leaf-light reveal flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="domain">domain</span>
+<h3 class="font-label-sm text-label-sm text-primary mb-1">Property Loan</h3>
+</div>
+<!-- Car -->
+<div class="bg-white p-6 rounded shadow-sm border-t-4 border-gold-leaf-light reveal flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="directions_car">directions_car</span>
+<h3 class="font-label-sm text-label-sm text-primary mb-1">Car Loan</h3>
+</div>
+<!-- Balance Transfer -->
+<div class="bg-white p-6 rounded shadow-sm border-t-4 border-gold-leaf-light reveal flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h3 class="font-label-sm text-label-sm text-primary mb-1">Balance Transfer</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-20 px-margin-mobile bg-deep-navy-dark text-white">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-md text-headline-md mb-12 text-center text-gold-leaf-light reveal">Why Prince Financial?</h2>
+<div class="space-y-8">
+<div class="flex gap-6 reveal">
+<div class="bg-gold-leaf-light/10 p-3 rounded-full h-fit">
+<span class="material-symbols-outlined text-gold-leaf-light" data-icon="verified">verified</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-2">Unmatched Expertise</h4>
+<p class="text-surface/70 font-body-md text-body-md">Deep industry knowledge to navigate complex banking policies with ease.</p>
+</div>
+</div>
+<div class="flex gap-6 reveal">
+<div class="bg-gold-leaf-light/10 p-3 rounded-full h-fit">
+<span class="material-symbols-outlined text-gold-leaf-light" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-2">Express Speed</h4>
+<p class="text-surface/70 font-body-md text-body-md">Proprietary processing channels ensuring the fastest turnaround times in the market.</p>
+</div>
+</div>
+<div class="flex gap-6 reveal">
+<div class="bg-gold-leaf-light/10 p-3 rounded-full h-fit">
+<span class="material-symbols-outlined text-gold-leaf-light" data-icon="visibility">visibility</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-2">Total Transparency</h4>
+<p class="text-surface/70 font-body-md text-body-md">Clear communication and zero hidden charges throughout your loan journey.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4-Step Process -->
+<section class="py-20 px-margin-mobile">
+<div class="max-w-container-max mx-auto text-center mb-12 reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Simplicity in Motion</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Your path to approval in 4 easy steps</p>
+</div>
+<div class="max-w-md mx-auto space-y-12 relative">
+<div class="flex items-start gap-6 reveal">
+<div class="bg-primary text-gold-leaf-light w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shrink-0">1</div>
+<div>
+<h4 class="font-headline-md text-lg text-primary">Inquiry</h4>
+<p class="text-on-surface-variant">Share your requirements with our expert advisors.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 reveal">
+<div class="bg-primary text-gold-leaf-light w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shrink-0">2</div>
+<div>
+<h4 class="font-headline-md text-lg text-primary">Documentation</h4>
+<p class="text-on-surface-variant">Hassle-free document pickup and digital verification.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 reveal">
+<div class="bg-primary text-gold-leaf-light w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shrink-0">3</div>
+<div>
+<h4 class="font-headline-md text-lg text-primary">Processing</h4>
+<p class="text-on-surface-variant">Direct liaison with banks for fast-track approval.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 reveal">
+<div class="bg-primary text-gold-leaf-light w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shrink-0">4</div>
+<div>
+<h4 class="font-headline-md text-lg text-primary">Disbursal</h4>
+<p class="text-on-surface-variant">Funds credited to your account with minimal delay.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- EMI Calculator -->
+<section class="py-20 px-margin-mobile bg-surface" id="calculator">
+<div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 text-center">EMI Calculator</h2>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Loan Amount</label>
+<span class="text-primary font-bold">₹<span id="amount-val">25,00,000</span></span>
+</div>
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" id="amount-range" max="10000000" min="100000" step="50000" type="range" value="2500000"/>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Interest Rate (PA)</label>
+<span class="text-primary font-bold"><span id="rate-val">8.5</span>%</span>
+</div>
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" id="rate-range" max="20" min="5" step="0.1" type="range" value="8.5"/>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Tenure (Years)</label>
+<span class="text-primary font-bold"><span id="tenure-val">15</span> Yrs</span>
+</div>
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" id="tenure-range" max="30" min="1" step="1" type="range" value="15"/>
+</div>
+<div class="mt-8 p-6 bg-deep-navy-dark rounded text-center text-white">
+<p class="font-label-sm text-label-sm opacity-70 mb-1">Estimated Monthly EMI</p>
+<p class="text-3xl font-bold text-gold-leaf-light">₹<span id="emi-result">24,615</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners Grid -->
+<section class="py-12 bg-white">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mb-8 uppercase tracking-widest">Our Banking Partners</p>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-8 grayscale opacity-60">
+<div class="h-12 flex items-center justify-center font-bold text-slate-gray">HDFC</div>
+<div class="h-12 flex items-center justify-center font-bold text-slate-gray">ICICI</div>
+<div class="h-12 flex items-center justify-center font-bold text-slate-gray">SBI</div>
+<div class="h-12 flex items-center justify-center font-bold text-slate-gray">AXIS</div>
+<div class="h-12 flex items-center justify-center font-bold text-slate-gray">IDFC</div>
+<div class="h-12 flex items-center justify-center font-bold text-slate-gray">KOTAK</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-20 px-margin-mobile bg-deep-navy-dark" id="testimonials">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-md text-headline-md text-gold-leaf-light mb-12 text-center reveal">What Our Clients Say</h2>
+<div class="space-y-6">
+<div class="bg-white/5 p-8 rounded-xl reveal">
+<div class="flex text-gold-leaf-light mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-surface font-body-md text-body-md italic mb-6">"Prince Financial turned a stressful process into a seamless one. Their team knows exactly how to present a profile to the banks."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-gold-leaf-light rounded-full flex items-center justify-center text-primary font-bold">RK</div>
+<div>
+<p class="font-bold text-white">Rajesh Kumar</p>
+<p class="text-gold-leaf-light text-xs">Business Owner</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="py-20 px-margin-mobile">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-md text-headline-md text-primary mb-12 text-center reveal">Frequently Asked Questions</h2>
+<div class="space-y-4 max-w-2xl mx-auto">
+<div class="border border-outline/20 rounded reveal">
+<button class="w-full flex items-center justify-between p-5 text-left font-bold text-primary faq-toggle">
+<span>How long does the approval process take?</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-5 pb-5 text-on-surface-variant hidden faq-content">
+                        Typical approvals take between 48 to 72 hours depending on the loan type and documentation completeness.
+                    </div>
+</div>
+<div class="border border-outline/20 rounded reveal">
+<button class="w-full flex items-center justify-between p-5 text-left font-bold text-primary faq-toggle">
+<span>What is the minimum credit score required?</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-5 pb-5 text-on-surface-variant hidden faq-content">
+                        While a score of 750+ is ideal, we work with various partners who cater to different profile ranges.
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Application Form -->
+<section class="py-20 px-margin-mobile bg-surface" id="apply">
+<div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-xl reveal">
+<div class="text-center mb-8">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Check Your Eligibility</h2>
+<p class="text-on-surface-variant text-sm">Start your journey to financial freedom today.</p>
+</div>
+<form class="space-y-4">
+<div>
+<label class="block font-label-sm text-label-sm text-primary mb-1">Full Name</label>
+<input class="w-full p-3 rounded border-outline/30 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-primary mb-1">Phone Number</label>
+<input class="w-full p-3 rounded border-outline/30 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+91 XXXXX XXXXX" type="tel"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-primary mb-1">Loan Type</label>
+<select class="w-full p-3 rounded border-outline/30 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option>Home Loan</option>
+<option>Personal Loan</option>
+<option>Business Loan</option>
+</select>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded font-bold hover:bg-primary-container transition-all shadow-md active:scale-95 mt-4" type="submit">
+                    Submit Application
+                </button>
+</form>
+</div>
+</section>
+<!-- Contact & Map -->
+<section class="py-20 px-margin-mobile" id="contact">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Connect With Us</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<p class="text-on-surface-variant">101 Corporate Suites, Financial District, Mumbai, MH</p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="phone">phone</span>
+<p class="text-on-surface-variant">+91 98765 43210</p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<p class="text-on-surface-variant">contact@princefinancial.com</p>
+</div>
+</div>
+</div>
+<div class="h-64 bg-surface-container rounded-xl overflow-hidden reveal relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="A stylized professional map of Mumbai's financial district, featuring minimalist vector lines in deep navy and gold. The map highlights key transit routes and business hubs, embodying a sense of strategic urban planning and corporate authority. The color palette is restricted to cream, navy, and gold to match the brand identity." data-location="Mumbai" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyBmWaqPGmnnOz_6TwC4u9rc9qcwDxR7ESwQlG12RQ2chqXz_P2zl487WFuR472jsV47MP6H_TMIXfpm0HWDK07uHHczgdWfLIBT5Zz_c7DFfud6um6EV-N6Hjsc4XHBuo_9Ev_JLKVYwLBi0zJFT-0UfiCVwzfD9SPjDUlhyzKt_rx0wD4yGZPZE7PXsFXfsy7vWVQlHDPTEIDXh35q8duVy7TmmiX1Vsnkkd4tIWuIEnW4RUdy0LI4WYaBVNNp5GMo1aljYuW6M')"></div>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-deep-navy-dark text-gold-leaf-light w-full py-12 border-t border-outline/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md font-bold text-gold-leaf-light">Prince Financial</div>
+<p class="text-surface/80 text-sm">Empowering financial dreams with precision and care.</p>
+</div>
+<div class="space-y-2">
+<p class="font-bold mb-4">Quick Links</p>
+<a class="block text-surface/80 hover:text-gold-leaf-light transition-transform hover:translate-x-1" href="#services">Services</a>
+<a class="block text-surface/80 hover:text-gold-leaf-light transition-transform hover:translate-x-1" href="#">Loan Process</a>
+<a class="block text-surface/80 hover:text-gold-leaf-light transition-transform hover:translate-x-1" href="#calculator">EMI Calculator</a>
+</div>
+<div class="space-y-2">
+<p class="font-bold mb-4">Resources</p>
+<a class="block text-surface/80 hover:text-gold-leaf-light transition-transform hover:translate-x-1" href="#testimonials">Testimonials</a>
+<a class="block text-surface/80 hover:text-gold-leaf-light transition-transform hover:translate-x-1" href="#">FAQs</a>
+<a class="block text-surface/80 hover:text-gold-leaf-light transition-transform hover:translate-x-1" href="#">Privacy Policy</a>
+</div>
+<div class="space-y-4">
+<p class="font-bold mb-4">Newsletter</p>
+<div class="flex">
+<input class="bg-white/10 border-none p-2 rounded-l w-full text-white" placeholder="Email" type="email"/>
+<button class="bg-gold-leaf-light text-primary p-2 rounded-r material-symbols-outlined" data-icon="send">send</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-12 pt-8 border-t border-outline/10 text-surface/40 text-sm">
+            © 2024 Prince Financial Consultancy. All rights reserved.
+        </div>
+</footer>
+<!-- Mobile Bottom Nav -->
+<nav class="fixed bottom-0 w-full md:hidden z-50 border-t border-outline-variant bg-surface shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-16 w-full">
+<a class="flex flex-col items-center justify-center text-primary font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#calculator">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+<span class="font-label-sm text-label-sm">Calc</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#apply">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-label-sm text-label-sm">Apply</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#contact">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-label-sm text-label-sm">Help</span>
+</a>
+</div>
+</nav>
+<!-- Floating Actions -->
+<div class="fixed right-6 bottom-24 flex flex-col gap-4 z-40 md:bottom-12">
+<button class="bg-green-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center animate-bounce hover:scale-110 transition-all">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</button>
+</div>
+<!-- Interactive Logic -->
+<script>
+        // Scroll Revel
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const revealTop = el.getBoundingClientRect().top;
+                if (revealTop < windowHeight - 50) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // FAQ Toggles
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.material-symbols-outlined');
+                content.classList.toggle('hidden');
+                icon.innerText = content.classList.contains('hidden') ? 'expand_more' : 'expand_less';
+            });
+        });
+
+        // EMI Calculator Logic
+        const amountRange = document.getElementById('amount-range');
+        const rateRange = document.getElementById('rate-range');
+        const tenureRange = document.getElementById('tenure-range');
+        const emiResult = document.getElementById('emi-result');
+
+        const calculateEMI = () => {
+            let P = parseFloat(amountRange.value);
+            let r = parseFloat(rateRange.value) / 12 / 100;
+            let n = parseFloat(tenureRange.value) * 12;
+            
+            document.getElementById('amount-val').innerText = P.toLocaleString('en-IN');
+            document.getElementById('rate-val').innerText = rateRange.value;
+            document.getElementById('tenure-val').innerText = tenureRange.value;
+
+            let emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            emiResult.innerText = Math.round(emi).toLocaleString('en-IN');
+        };
+
+        [amountRange, rateRange, tenureRange].forEach(input => {
+            input.addEventListener('input', calculateEMI);
+        });
+    </script>
+</body></html>
